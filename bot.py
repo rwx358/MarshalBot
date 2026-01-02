@@ -15,6 +15,10 @@ async def on_ready():
     print(f"Connected as {bot.user}")
 
 @bot.event
+async def on_error(event, *args, **kwargs):
+    print(f"Error in event {event}", flush=True)
+
+@bot.event
 async def on_member_join(member):
     try:
         await member.send(
